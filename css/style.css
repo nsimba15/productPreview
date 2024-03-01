@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  transition: all 0.3s ease-in;
+}
+
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--Cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.card_component {
+  width: 600px;
+  height: 450px;
+  background-color: var(--White);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card_component .image_component img {
+  width: 100%;
+}
+
+.card_component .content_component {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  padding: 25px;
+}
+.mobile {
+  display: none;
+}
+h6 {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--Dark-grayish-blue);
+}
+
+h1 {
+  font-family: "Elephant";
+  font-weight: 400;
+  color: var(--Very-dark-blue);
+}
+
+p {
+  color: var(--Dark-grayish-blue);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.content_component .id {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.id .big {
+  font-size: 2rem;
+  color: var(--Dark-cyan);
+  font-weight: 500;
+  font-family: "Elephant";
+}
+
+.id .small {
+  font-size: 13px;
+  text-decoration: line-through;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: var(--Dark-cyan);
+  border-radius: 8px;
+  color: var(--White);
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--Very-dark-blue);
+}
+
+@media screen and (max-width: 479px) {
+  .card_component {
+    width: 90%;
+    margin: 8rem auto 34px;
+    height: 600px;
+    grid-template-columns: 1fr;
+  }
+
+  .card_component .content_component {
+    padding: 18px;
+    gap: 13px;
+  }
+
+  .card_component .image_component img {
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    color: var(--Very-dark-blue);
+  }
+  .id .big {
+    font-size: 1.7rem;
+  }
+
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
